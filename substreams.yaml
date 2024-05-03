@@ -1,0 +1,17 @@
+specVersion: v0.1.0
+package:
+  name: "substreams_eth_rpc_batch"
+  version: v0.0.1
+
+binaries:
+  default:
+    type: wasm/rust-v1
+    file: ./target/wasm32-unknown-unknown/release/substreams.wasm
+
+modules:
+  - name: map_block
+    kind: map
+    inputs:
+      - source: sf.ethereum.type.v2.Block
+    output:
+      type: proto:google.protobuf.Empty
